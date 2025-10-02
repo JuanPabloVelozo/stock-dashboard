@@ -1,0 +1,44 @@
+<!-- Lista de instrumentos en dos columnas -->
+<div class="instrument-list">
+  <!-- Columna izquierda -->
+  <div class="column left">
+    <div class="instrument-header">
+      <span class="col name">
+        Nombre
+        <button class="sort-btn" (click)="sortByName()">⇅</button>
+      </span>
+      <span class="col last-price">Último</span>
+      <span class="col volume">Monto (MM)</span>
+      <span class="col pct-day">Var Día</span>
+      <span class="col pct-30d">Var 30D</span>
+      <span class="col pct-cy">Año Actual</span>
+      <span class="col pct-1y">12 Meses</span>
+    </div>
+    <ng-container *ngFor="let instr of filteredInstruments.slice(0, filteredInstruments.length / 2)">
+      <app-instrument-item [instrument]="instr"></app-instrument-item>
+    </ng-container>
+  </div>
+
+  <!-- Columna derecha -->
+  <div class="column right">
+    <div class="instrument-header">
+      <span class="col name">
+        Nombre
+        <button class="sort-btn" (click)="sortByName()">⇅</button>
+      </span>
+      <span class="col last-price">Último</span>
+      <span class="col volume">Monto (MM)</span>
+      <span class="col pct-day">Var Día</span>
+      <span class="col pct-30d">Var 30D</span>
+      <span class="col pct-cy">Año Actual</span>
+      <span class="col pct-1y">12 Meses</span>
+    </div>
+    <ng-container *ngFor="let instr of filteredInstruments.slice(filteredInstruments.length / 2)">
+      <app-instrument-item [instrument]="instr"></app-instrument-item>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>Cargando instrumentos...</p>
+</ng-template>

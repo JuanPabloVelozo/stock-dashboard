@@ -1,0 +1,10 @@
+<p-card header="Evolución del índice">
+  <div *ngIf="chartPoints.length" class="chart-container">
+    <svg viewBox="0 0 250 200" width="100%" height="200">
+      <polyline [attr.points]="svgPoints"
+                fill="none"
+                stroke="#007bff"
+                stroke-width="2" />
+    </svg>
+  </div>
+</p-card>

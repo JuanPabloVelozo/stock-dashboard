@@ -1,0 +1,13 @@
+.content {
+  display: flex;
+  flex-direction: row; 
+  gap: 1rem; 
+}
+
+app-chart {
+  flex: 2;
+}
+
+app-summary {
+  flex: 1; 
+}

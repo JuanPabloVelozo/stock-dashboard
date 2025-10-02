@@ -1,0 +1,9 @@
+<div class="instrument-row">
+  <span class="col name">{{ instrument.codeInstrument }}</span>
+  <span class="col last-price">{{ instrument.lastPrice | number:'1.2-2' }}</span>
+  <span class="col volume">{{ instrument.volumeMoney | number:'1.0-0' }}</span>
+  <span class="col pct-day">{{ instrument.pctDay | percent:'1.2-2' }}</span>
+  <span class="col pct-30d">{{ instrument.pct30D | percent:'1.2-2' }}</span>
+  <span class="col pct-cy">{{ instrument.pctCY | percent:'1.2-2' }}</span>
+  <span class="col pct-1y">{{ instrument.pct1Y | percent:'1.2-2' }}</span>
+</div>

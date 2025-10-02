@@ -1,23 +1,32 @@
-import { TestBed } from '@angular/core/testing';
-import { App } from './app';
+import { Component, signal } from '@angular/core';
+import { Tab } from './components/tab/tab';
+import { Header } from './components/header/header';
+import { SearchBar } from './components/search-bar/search-bar';
+import { InstrumentList } from './components/instrument-list/instrument-list';
+import { Chart } from './components/chart/chart';
+import { Summary } from './components/summary/summary';
 
-describe('App', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [App],
-    }).compileComponents();
-  });
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [
+    Tab,
+    Header,
+    SearchBar,
+    InstrumentList,
+    Chart,
+    Summary
+  ],
+  templateUrl: './app.html',
+  styleUrls: ['./app.scss']
+})
+export class App {
+  // señal para el buscador
+  searchTerm = signal('');
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(App);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
+  // recibe el valor desde SearchBar
+  onSearch(term: string) {
+    this.searchTerm.set(term);
+  }
+}
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(App);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, stock-dashboard');
-  });
-});

@@ -1,0 +1,39 @@
+.chart-container {
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  overflow: hidden;
+  display: flex; // Habilita flexbox
+  justify-content: flex-start; // Alinea a la izquierda
+
+  svg {
+    display: block;
+    width: auto; // Se ajusta al contenido
+    max-width: 100%; // No se salga del contenedor
+    height: 200px;
+  }
+
+  polyline {
+    stroke: #007bff;
+    stroke-width: 3;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+/* Ajuste del card de PrimeNG */
+:host ::ng-deep .p-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+
+  .p-card-header {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #333;
+    text-align: left; // Asegura que el header quede a la izquierda
+  }
+}

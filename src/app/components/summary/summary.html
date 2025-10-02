@@ -1,0 +1,8 @@
+<p-card header="Resumen del índice">
+  <div *ngIf="price">
+    <p>Último Precio: {{ price.lastPrice }}</p>
+    <p>Variación Día: {{ price.performanceRelative | percent:'1.2-2' }}</p>
+    <p>Variación 30 días: {{ price.pct30D | percent:'1.2-2' }}</p>
+    <p>Variación Año: {{ price.pctRelCY | percent:'1.2-2' }}</p>
+  </div>
+</p-card>

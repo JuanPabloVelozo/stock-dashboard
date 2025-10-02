@@ -1,0 +1,43 @@
+.instrument-header,
+.instrument-row {
+  display: flex;
+  padding: 0.5rem 1rem;
+  gap: 0.5rem;
+}
+
+.instrument-header {
+  font-weight: bold;
+  border-bottom: 2px solid #333;
+}
+
+.instrument-row {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #f9f9f9;
+  }
+}
+
+.col {
+  padding: 0 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Proporciones fijas para alinear con encabezado */
+.name {
+  flex: 2;
+  text-align: left;
+}
+
+.last-price, .volume {
+  flex: 1.2;
+  text-align: right;
+}
+
+.pct-day, .pct-30d, .pct-cy, .pct-1y {
+  flex: 1;
+  text-align: right;
+}
